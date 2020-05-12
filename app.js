@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const path = require("path");
 const app = express();
+require("dotenv").config();
+
+const port = process.env.PORT || 5000;
 
 const { getHomePage } = require("./routes/index");
 const {
@@ -13,15 +16,14 @@ const {
   editPlayer,
   editPlayerPage,
 } = require("./routes/player");
-const port = 5100;
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "sch0012",
-  database: "acme",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // connect to database

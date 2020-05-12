@@ -6,7 +6,7 @@ create public/assets/img folder on root for storing images
 
 npm init
 
-npm install --save express body-parser ejs express-fileupload mysql req-flash
+npm install --save express body-parser ejs express-fileupload mysql req-flash dotenv
 
 create your acme database on mysql and players table
 
